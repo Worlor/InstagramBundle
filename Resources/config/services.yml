@@ -1,6 +1,6 @@
 parameters:
     instaphp.class:	      Oh\InstagramBundle\Adapter\InstaphpAdapter
-    instaphp.token_class: Oh\InstagramBundle\TokenHandler\CookieToken
+    instaphp.token_class: Oh\InstagramBundle\TokenHandler\UserToken
     instaphp.redirect_route_login: OhInstagramBundle_check
     instaphp.redirect_route_logout: OhInstagramBundle_check
 
@@ -9,7 +9,7 @@ services:
         class:            %instaphp.token_class%
     instaphp:
         class:            %instaphp.class%
-        arguments:        ["@instaphp_token_handler", "%instaphp.config%", "@router"]
+        arguments:        ["@security.context", "@doctrine.orm.default_entity_manager"]
         
         
 #### to get/set the instagram token from your user entity

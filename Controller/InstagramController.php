@@ -38,8 +38,6 @@ class InstagramController extends Controller
 
 				$isLoggedIn = $this->get('instaphp_token_handler')->setToken($token);
 
-				$this->get('session')->getFlashBag()->add('loggedin', 'Thanks for logging in');
-
 				return $this->redirect($this->generateUrl($this->container->getParameter('instaphp.redirect_route_login')));
 			}
 			catch(Exception $e)
