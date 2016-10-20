@@ -54,7 +54,7 @@ class UserToken implements TokenHandlerInterface
      */
 	public function getToken()
 	{
-		if($this->user && $token = $this->user->getInstagramAuthCode()) {
+		if($this->isUserLoggedIn() && $token = $this->user->getInstagramAuthCode()) {
             return $token;
         }
 		

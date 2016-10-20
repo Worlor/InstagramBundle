@@ -26,6 +26,7 @@ class OhInstagramExtension extends Extension
         $loader->load('services.yml');
 
         $container->setParameter('instaphp.config', $config['instaphp']['config']);
+
     }
 
     public function getAlias() {
