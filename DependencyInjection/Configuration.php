@@ -41,6 +41,8 @@ class Configuration implements ConfigurationInterface
                                 ->booleanNode('log_enabled')->defaultTrue()->end()
                                 ->integerNode('http_timeout')->defaultValue(6)->end()
                                 ->integerNode('http_connect_timeout')->defaultValue(2)->end()
+                                ->scalarNode('redirect_route_login')->isRequired()->cannotBeEmpty()->end()
+                                ->scalarNode('redirect_route_logout')->isRequired()->cannotBeEmpty()->end()
                             ->end()
                         ->end()
                     ->end()
